@@ -1,9 +1,14 @@
+import { devices } from "../data/data.js";
+
 const Exercise2 = () => {
+  const devicesWithMinSize700 = devices.filter((device) => device.width >= 700);
   return (
     <ul>
-      <li>ここに適切なリストを表示してください</li>
+      {devicesWithMinSize700.map((device) => (
+        <li key={device.id}>{device.name}</li>
+      ))}
     </ul>
-  )
+  );
 };
 
 export default Exercise2;
